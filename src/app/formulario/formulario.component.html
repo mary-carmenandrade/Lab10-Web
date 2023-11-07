@@ -1,0 +1,22 @@
+<div class="container" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="col-md-6 mx-auto" style="max-width: 400px;">
+    <div class="card" style="border: 1px solid rgb(185, 84, 194); border-radius: 5px;">
+      <div class="card-body" style="background-color: rgb(185, 84, 194);">
+        <h3 class="card-title text-center">Iniciar Sesión</h3>
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm" style="background-color: rgb(185, 84, 194);">
+          <div class="form-group" style="padding: 10px;">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" [(ngModel)]="nombre" name="name" class="form-control" required minlength="5" maxlength="50" [ngModelOptions]="{ updateOn: 'change' }">
+          </div>
+
+          <div class="form-group" style="padding: 10px;">
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" required email [ngModelOptions]="{ updateOn: 'change' }">
+          </div>
+          <br>
+          <button type="button" class="btn btn-primary btn-block" [disabled]="!isFormValid" (click)="confirmarEnvio()" style="background-color: #18107e; border: none;">Iniciar Sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
